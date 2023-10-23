@@ -76,19 +76,6 @@ header {
 	text-align: center;
 }
 
-@keyframes animacao1 {
-	0% {
-		transform: scale(1);
-	}
-
-	50% {
-		transform: scale(1.2);
-	}
-
-	100% {
-		transform: scale(1);
-	}
-}
 
 @keyframes animacao2 {
 	0% {
@@ -142,10 +129,11 @@ header {
 		}
 	}
 
+
 .characters-container {
-	animation-name: animacao1, animacao2, animacao3;
-	animation-duration: 2s, 3s, 4s;
-	animation-timing-function: ease-in, ease-out, cubic-bezier(0.1, 0.7, 1.0, 0.1);
+	animation-name: animacao2, animacao3;
+	animation-duration: 5s, 6s;
+	animation-timing-function:ease-in-out, cubic-bezier(0.1, 0.7, 1.0, 0.1);
 }
 
 @keyframes moveIn {
@@ -324,23 +312,15 @@ header {
 			transform: translateX(50%);
 		}
 	
-		50% {
-			transform: translateX(0%);
-		}
-	
-		65% {
-			transform: translateX(35%);
-		}
-	
-		80% {
-			transform: translateX(0%);
-		}
-	
-		90% {
+	50% {
 			transform: translateX(25%);
 		}
 	
-		100% {
+	75% {
+			transform: translateX(35%);
+		}
+	
+	100% {
 			transform: translateX(0%);
 		}
 	}
