@@ -4,6 +4,8 @@ const searchByName = document.getElementById('searchByName');
 const prevPage = document.getElementById('prevPage');
 const nextPage = document.getElementById('nextPage');
 
+const backgroundModal = '../imagesFUNDO.jpg';
+
 let response;
 let currentPage = 1;
 let isLoading = false;
@@ -106,17 +108,19 @@ async function loadCharacters(page = 1, name = '', species, gender, status) {
 				document.getElementById('characterModalTitle').textContent = character.name;
 				document.getElementById('characterModalBody').innerHTML = `
 				<div style="display: flex;">
-						<img src="${character.image}" alt="${character.name}" style="border-radius: 5px"><br>
+						<img src="${character.image}" alt="${character.name}" style="border-radius: 5px">
 						<div style="flex: 2; margin-left: 20px; display: flex; flex-direction: column; justify-content: center">
-                              <p><strong>Status:</strong> ${character.status}</p>
-                              <p><strong>Espécie:</strong> ${character.species}</p>
-                              <p><strong>Gender:</strong> ${character.gender}</p>
-                              <p><strong>Localização:</strong> ${locationName}</p>
-                              <p><strong>Último episódio:</strong> ${episodeName}</p>
+						<p><strong style='color: green'>Status:</strong> ${character.status}</p>
+						<p><strong style='color: green'>Espécie:</strong> ${character.species}</p>
+						<p><strong style='color: green'>Gender:</strong> ${character.gender}</p>
+						<p><strong style='color: green'>Localização:</strong> ${locationName}</p>
+						<p><strong style='color: green'>Último episódio:</strong> ${episodeName}</p>
 						</div>
 						</div>
-                              `;
-				var myModal = new bootstrap.Modal(document.getElementById('characterModal'));
+						`;
+				let myModal = new bootstrap.Modal(document.getElementById('characterModal'));
+				characterModal.classList.add('custom-background');
+				characterModalBody.classList.add('rotate-animation');
 				myModal.show();
 			});
 		});
@@ -188,3 +192,7 @@ axios
 	.catch(function (error) {
 		console.log(error);
 	});
+
+$(window).on('load', function () {
+	$('#loader').fadeOut(4000);
+});

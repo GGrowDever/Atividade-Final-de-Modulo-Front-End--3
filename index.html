@@ -2,22 +2,44 @@
 <html lang="pt-BR">
 	<head>
 		<meta charset="UTF-8" />
-		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<meta
+			name="viewport"
+			content="width=device-width, initial-scale=1.0" />
 		<title>Rick and Morty API</title>
-		<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" />
-		<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css" />
-		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
-		<link rel="shortcut icon" href="./images/RICK_MORTY_ICON.png" type="image/x-icon" />
-		<link rel="stylesheet" href="./CSS/styles.css" />
+		<link
+			rel="stylesheet"
+			href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" />
+		<link
+			rel="stylesheet"
+			href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css" />
+		<link
+			rel="stylesheet"
+			href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
+		<link
+			rel="shortcut icon"
+			href="./images/RICK_MORTY_ICON.png"
+			type="image/x-icon" />
+		<link
+			rel="stylesheet"
+			href="./CSS/styles.css" />
 	</head>
 	<body>
+		<div id="loader"></div>
 		<div class="row ms-5">
-			<div><img class="img-fluid" src="./images/RICK_MORTY_ICON-01.svg" alt="" style="height: 50px" /></div>
+			<div>
+				<img
+					class="img-fluid"
+					src="./images/RICK_MORTY_ICON-01.svg"
+					alt=""
+					style="height: 50px" />
+			</div>
 		</div>
 		<header class="container-fluid bg-white d-flex justify-content-center align-items-center">
 			<div class="row">
 				<div class="col d-flex justify-content-center">
-					<h1 id="title" class="fw-bold"></h1>
+					<h1
+						id="title"
+						class="fw-bold"></h1>
 				</div>
 				<div class="input-group d-flex justify-content-center">
 					<input
@@ -25,8 +47,7 @@
 						name="search"
 						id="searchByName"
 						class="container-fluid search rounded-3 box"
-						placeholder="Pesquise..."
-					/>
+						placeholder="Pesquise..." />
 				</div>
 			</div>
 		</header>
@@ -36,33 +57,67 @@
 				<div class="row">
 					<div
 						id="charactersContainer"
-						class="col-12 col-lg-10 container-fluid characters-container d-flex flex-wrap justify-content-center gap-3"
-					></div>
+						class="col-12 col-lg-10 container-fluid characters-container d-flex flex-wrap justify-content-center gap-3"></div>
 					<div>
-						<div class="col d-flex justify-content-center justify-content-between m-5" id="pagination">
-							<button id="prevPage" class="glow-on-hover" type="button">Prev Page</button>
-							<button id="nextPage" class="glow-on-hover" type="button">Next Page</button>
+						<div
+							class="col d-flex justify-content-center justify-content-between m-5"
+							id="pagination">
+							<button
+								id="prevPage"
+								class="glow-on-hover"
+								type="button">
+								Prev Page
+							</button>
+							<span id="current-page">1</span>
+							<button
+								id="nextPage"
+								class="glow-on-hover"
+								type="button">
+								Next Page
+							</button>
 						</div>
 					</div>
 				</div>
 			</div>
-			<div class="modal fade" tabindex="-1" id="characterModal">
+			<div
+				class="modal fade"
+				tabindex="-1"
+				id="characterModal">
 				<div class="modal-dialog modal-dialog-centered">
 					<div class="modal-content modal-background">
 						<div class="modal-header">
-							<h5 class="modal-title" id="characterModalTitle"></h5>
-							<button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+							<h5
+								class="modal-title"
+								id="characterModalTitle"></h5>
+							<button
+								type="button"
+								class="btn-close"
+								data-bs-dismiss="modal"></button>
 						</div>
-						<div class="modal-body" id="characterModalBody"></div>
+						<div
+							class="modal-body"
+							id="characterModalBody"></div>
 					</div>
 				</div>
 			</div>
 		</main>
 		<footer class="row flex-row">
 			<div class="col-12 d-flex justify-content-center align-items-center align-content-center">
-				<h5 id="characters" class="m-4 text-secondary">PERSONAGENS: XX</h5>
-				<h5 id="locations" class="m-4 text-secondary">LOCALIZAÇÕES: XX</h5>
-				<h5 id="episodes" class="m-4 text-secondary">EPISÓDIOS: XX</h5>
+				<h5
+					id="characters"
+					class="m-4 text-secondary">
+					PERSONAGENS: XX
+				</h5>
+				<h5
+					id="locations"
+					class="m-4 text-secondary">
+					LOCALIZAÇÕES: XX
+				</h5>
+				<h5
+					id="episodes"
+					class="m-4 text-secondary">
+					EPISÓDIOS: XX
+				</h5>
 			</div>
 			<div class="col d-flex justify-content-center align-items-end pb-5">
 				<p class="text-secondary">
@@ -74,6 +129,7 @@
 		<script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
 		<script src="	https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
 		<script src="./JS/api.js"></script>
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 		<script src="./JS/script.js"></script>
 	</body>
 </html>
